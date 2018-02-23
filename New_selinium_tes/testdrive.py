@@ -82,6 +82,7 @@ class PArkingLottest(unittest.TestCase):
 
 
     def tearDown(self):
+        print "------- test is over -------"
         self.driver.close()
 
 if __name__ == "__main__":
