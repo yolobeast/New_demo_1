@@ -24,8 +24,10 @@ def countlines(event):
 def action():
     input_text = t.get("1.0","end-1c")
     t2.configure(state='normal')
+    z = []
     n = 160
     g = 0
+    z = input_text.split(" ")
     a = [input_text[i:i+n] for i in range(0, len(input_text), n)]
     for i in range(0,len(a)):
         g = g+1
@@ -33,18 +35,18 @@ def action():
         print ("this is your message: " + a[i] + "\n\n")
         t2.insert("end",("this is your message id : " + str(g) + "\n"))
         t2.insert("end",("this is your message: " + a[i] + "\n\n"))
+        # if (' 'in a[i]):
+        #     t2.insert("end",("this is your message: " + z[i] + "\n\n"))
+
     t2.configure(state='disabled')
 
 def main():
-    #root = tk.Tk()
     root.geometry("525x525")
     root.resizable(False, False)
     menu = tk.Menu(root)
     root.config(menu=menu)
 
     labelOne=tk.Label(root, text = "Enter the SMS text message:")
-    #scroll_1 = Scrollbar(root)
-    #t.config(yscrollcommand=scroll_1.set)
     labelOne.place(x=5,y=25)
 
     t.place(x = 5,y = 50)
